@@ -20,6 +20,10 @@ public class Comment extends BaseEntity {
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "vehicle_id", nullable = false)
+    private Vehicle vehicle;
+
     // getters and setters for all fields
 
 }

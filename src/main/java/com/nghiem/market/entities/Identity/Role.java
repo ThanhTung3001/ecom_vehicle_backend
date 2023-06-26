@@ -9,6 +9,13 @@ public class Role extends BaseEntity {
     @Column(nullable = false)
     private String name;
 
-    // constructors, getters, and setters
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+// constructors, getters, and setters
 
 }
