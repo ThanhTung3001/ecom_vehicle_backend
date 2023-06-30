@@ -13,11 +13,6 @@ public class Vehicle extends BaseEntity {
 
     @Column(nullable = false)
     private String name;
-    @Column(nullable = false)
-    private String description;
-
-    @Column(nullable = false)
-    private String content;
 
     @Column(nullable = false)
     private String plateNumber;
@@ -43,8 +38,6 @@ public class Vehicle extends BaseEntity {
     @Column(nullable = false)
     private String color;
 
-    @Column(nullable = false)
-    private String condition;
 
     @Column(nullable = false)
     private float price;
