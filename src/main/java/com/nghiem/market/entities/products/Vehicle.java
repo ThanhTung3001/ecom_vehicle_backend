@@ -4,9 +4,14 @@ import com.nghiem.market.entities.BaseEntity;
 import com.nghiem.market.entities.Identity.User;
 import com.nghiem.market.entities.attachments.FileUpload;
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
+
 import java.time.LocalDate;
 import java.util.Set;
 
+@Setter
+@Getter
 @Entity
 @Table(name = "vehicles")
 public class Vehicle extends BaseEntity {
