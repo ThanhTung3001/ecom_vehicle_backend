@@ -8,6 +8,7 @@ public class ResponseApi<T> {
     public List<Object> options;
 
     public T Data;
+
     public ResponseApi(int code, String message, List<Object> options, T data) {
         this.code = code;
         this.message = message;

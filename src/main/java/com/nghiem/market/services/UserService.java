@@ -1,4 +1,5 @@
 package com.nghiem.market.services;
+
 import com.nghiem.market.entities.Identity.User;
 import com.nghiem.market.entities.Identity.UserPrincipal;
 import com.nghiem.market.repository.UserRepository;
@@ -29,7 +30,7 @@ public class UserService implements UserDetailsService {
     @Transactional
     public UserDetails loadUserById(UUID id) {
         User user = userRepository.findById(id)
-                .orElseThrow(() -> new UsernameNotFoundException("User not found with username or email : " ));
+                .orElseThrow(() -> new UsernameNotFoundException("User not found with username or email : "));
 
         return UserPrincipal.create(user);
     }

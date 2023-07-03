@@ -15,14 +15,12 @@ import java.util.UUID;
 @RestController
 @RequestMapping("/api")
 
-public abstract class BaseController<T extends BaseEntity, TGet,TCreate> {
-
-    @Autowired
-    private CrudService<T> crudService;
+public abstract class BaseController<T extends BaseEntity, TGet, TCreate> {
 
     @Autowired
     public ModelMapper mapper;
-
+    @Autowired
+    private CrudService<T> crudService;
     private Class<TGet> getEntityType;
 
     private Class<TCreate> createEntityType;
@@ -46,7 +44,7 @@ public abstract class BaseController<T extends BaseEntity, TGet,TCreate> {
     @PostMapping
     public ResponseEntity<T> create(@RequestBody TCreate entity) {
 
-        var createEntity = mapper.map(entity,entityType);
+        var createEntity = mapper.map(entity, entityType);
         createEntity.prePersist();
         T createdEntity = crudService.create(createEntity);
         return ResponseEntity.created(URI.create("/api/" + getEntityId(createdEntity))).body(createdEntity);

@@ -7,9 +7,9 @@ import jakarta.persistence.*;
 @Table(name = "file_upload")
 @Entity
 public class FileUpload extends BaseEntity {
-    public String fileName ;
+    public String fileName;
 
-    public String path ;
+    public String path;
 
     public String severPath;
 

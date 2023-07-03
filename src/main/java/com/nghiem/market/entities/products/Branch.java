@@ -1,4 +1,5 @@
 package com.nghiem.market.entities.products;
+
 import com.nghiem.market.entities.BaseEntity;
 import jakarta.persistence.*;
 import lombok.Getter;

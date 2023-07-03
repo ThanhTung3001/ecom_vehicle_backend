@@ -22,9 +22,9 @@ public class SecurityConfig {
 
         http.csrf(csrf -> csrf.disable())
                 .authorizeRequests().
-                 requestMatchers("/test").authenticated().requestMatchers(
-                         "/api/auth/login",
-                        "/api/home","/v3/api-docs",
+                requestMatchers("/test").authenticated().requestMatchers(
+                        "/api/auth/login",
+                        "/api/home", "/v3/api-docs",
                         "/swagger-ui/**",
                         "/api/branch/**").permitAll()
                 .anyRequest()

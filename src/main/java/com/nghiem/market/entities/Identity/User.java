@@ -21,7 +21,7 @@ public class User extends BaseEntity {
     private String password;
 
     @Column
-    private String FullName ;
+    private String FullName;
 
     @Column
     private LocalDateTime DateOfBirth;
@@ -47,6 +47,11 @@ public class User extends BaseEntity {
     public String getUsername() {
         return username;
     }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
     public String getEmail() {
         return Email;
     }
@@ -57,6 +62,10 @@ public class User extends BaseEntity {
 
     public String getPassword() {
         return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getFullName() {
@@ -105,14 +114,6 @@ public class User extends BaseEntity {
 
     public void setSellingVehicles(Set<Vehicle> sellingVehicles) {
         this.sellingVehicles = sellingVehicles;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
     }
 // constructors, getters, and setters
 
