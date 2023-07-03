@@ -7,12 +7,12 @@ public class ResponseApi<T> {
     public String message;
     public List<Object> options;
 
-    public T Data;
+    public T data;
     public ResponseApi(int code, String message, List<Object> options, T data) {
         this.code = code;
         this.message = message;
         this.options = options;
-        Data = data;
+        this.data = data;
     }
 
 

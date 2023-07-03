@@ -1,22 +1,31 @@
 package com.nghiem.market.services;
 
+import com.nghiem.market.entities.BaseEntity;
 import com.nghiem.market.exceptions.ResourceNotFoundException;
+import com.nghiem.market.repository.GenericRepository;
 import org.springframework.beans.BeanUtils;
-import org.springframework.beans.factory.annotation.*;
-import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.UUID;
 
 @Service
-public class CrudServiceImpl<T> implements CrudService<T> {
+public class CrudServiceImpl<T extends BaseEntity> implements CrudService<T> {
 
-    @Autowired
-    private CrudRepository<T, UUID> crudRepository;
+    private final GenericRepository<T> crudRepository;
+
+    public CrudServiceImpl(GenericRepository<T> crudRepository) {
+        this.crudRepository = crudRepository;
+    }
 
     @Override
     public T getById(UUID id) {
-        return crudRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Entity", "id", id));
+        try {
+            return crudRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Entity", "id", id));
+        }catch (Exception ex){
+            throw ex;
+        }
+
     }
 
     @Override
@@ -34,6 +43,11 @@ public class CrudServiceImpl<T> implements CrudService<T> {
     @Override
     public void delete(UUID id) {
         crudRepository.deleteById(id);
+    }
+
+    @Override
+    public List<T> getAll() {
+        return crudRepository.findAll();
     }
 
     // Other CRUD methods can be added here...

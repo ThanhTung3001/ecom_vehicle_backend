@@ -67,6 +67,7 @@ public abstract class BaseEntity {
 
     @PrePersist
     public void prePersist() {
+
         this.id = UUID.randomUUID();
         this.createdAt = LocalDateTime.now();
         this.createdBy = "system"; // or get the current user from Spring Security context

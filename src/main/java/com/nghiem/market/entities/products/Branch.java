@@ -1,7 +1,9 @@
 package com.nghiem.market.entities.products;
 import com.nghiem.market.entities.BaseEntity;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.Set;
@@ -10,6 +12,8 @@ import java.util.Set;
 @Table(name = "branches")
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class Branch extends BaseEntity {
 
     @Column(nullable = false)
